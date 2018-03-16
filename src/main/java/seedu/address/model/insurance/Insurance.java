@@ -1,9 +1,9 @@
 package seedu.address.model.insurance;
 
 import static seedu.address.commons.util.CollectionUtil.requireAllNonNull;
-import java.util.Collections;
+
 import java.util.Objects;
-import java.util.Set;
+
 
 /**
  * Represents a Insurance in the address book.
@@ -21,18 +21,24 @@ public class Insurance {
      * Every field must be present and not null
      */
     public Insurance(Name insuranceName, Commission commission, Premium monthlyPremium) {
-       requireAllNonNull(insuranceName, commission, monthlyPremium);
-       this.insuranceName = insuranceName;
-       this.commission = commission;
-       this.monthlyPremium = monthlyPremium;
+        requireAllNonNull(insuranceName, commission, monthlyPremium);
+        this.insuranceName = insuranceName;
+        this.commission = commission;
+        this.monthlyPremium = monthlyPremium;
     }
 
 
-    public Name getInsuranceName(){return insuranceName;}
+    public Name getInsuranceName(){
+        return insuranceName;
+    }
 
-    public Commission getCommission(){return commission;}
+    public Commission getCommission(){
+        return commission;
+    }
 
-    public Premium getMonthlyPremium(){return monthlyPremium;}
+    public Premium getMonthlyPremium(){
+        return monthlyPremium;
+    }
 
     @Override
     public boolean equals(Object other) {

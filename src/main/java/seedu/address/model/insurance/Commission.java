@@ -3,13 +3,17 @@ package seedu.address.model.insurance;
 import static java.util.Objects.requireNonNull;
 import static seedu.address.commons.util.AppUtil.checkArgument;
 
+/**
+ * Represents a Insurance's commission.
+ * Guarantees: immutable; is valid as declared in {@link #isValidCommission(String)}
+ */
 public class Commission {
     public static final String MESSAGE_COMMISSION_CONSTRAINTS = "Comission can only contain numbers";
     public static final String COMMISSION_VALIDATION_REGEX = "\\d";
     public final String value;
 
     /**
-     * Constructs a {@code Phone}.
+     * Constructs a {@code Commission}.
      *
      * @param commission A valid commission.
      */
@@ -20,7 +24,7 @@ public class Commission {
     }
 
     /**
-     * Returns true if a given string is a valid person phone number.
+     * Returns true if a given string is a valid commission.
      */
     public static boolean isValidCommission(String test) {
         return test.matches(COMMISSION_VALIDATION_REGEX);
