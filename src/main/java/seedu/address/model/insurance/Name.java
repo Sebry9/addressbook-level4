@@ -3,6 +3,11 @@ package seedu.address.model.insurance;
 import static java.util.Objects.requireNonNull;
 import static seedu.address.commons.util.AppUtil.checkArgument;
 
+/**
+ * Represents a Insurance's name in reInsurance.
+ * Guarantees: immutable; is valid as declared in {@link #isValidName(String)}
+ */
+
 public class Name {
     public static final String MESSAGE_NAME_CONSTRAINTS =
             "Person names should only contain alphanumeric characters and spaces, and it should not be blank";

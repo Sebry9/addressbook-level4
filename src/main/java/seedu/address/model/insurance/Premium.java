@@ -3,6 +3,12 @@ package seedu.address.model.insurance;
 import static java.util.Objects.requireNonNull;
 import static seedu.address.commons.util.AppUtil.checkArgument;
 
+
+/**
+ * Represents a Insurance's monthly premium price
+ * Guarantees: immutable; is valid as declared in {@link #isValidPremium(String)}
+ */
+
 public class Premium {
     public static final String MESSAGE_PREMIUM_CONSTRAINTS = "Premium can only contain numbers";
     public static final String PREMIUM_VALIDATION_REGEX = "\\d";

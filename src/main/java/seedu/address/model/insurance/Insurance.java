@@ -6,7 +6,7 @@ import java.util.Objects;
 
 
 /**
- * Represents a Insurance in the address book.
+ * Represents a Insurance in reInsurance.
  * Guarantees: details all present and not null
  */
 public class Insurance {
@@ -28,15 +28,15 @@ public class Insurance {
     }
 
 
-    public Name getInsuranceName(){
+    public Name getInsuranceName() {
         return insuranceName;
     }
 
-    public Commission getCommission(){
+    public Commission getCommission() {
         return commission;
     }
 
-    public Premium getMonthlyPremium(){
+    public Premium getMonthlyPremium() {
         return monthlyPremium;
     }
 
