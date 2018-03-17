@@ -18,7 +18,7 @@ public class Name {
      */
     public static final String NAME_VALIDATION_REGEX = "[\\p{Alnum}][\\p{Alnum} ]*";
 
-    public final String InsuranceName;
+    public final String insuranceName;
 
     /**
      * Constructs a {@code Name}.
@@ -28,7 +28,7 @@ public class Name {
     public Name(String name) {
         requireNonNull(name);
         checkArgument(isValidName(name), MESSAGE_NAME_CONSTRAINTS);
-        this.InsuranceName = name;
+        this.insuranceName = name;
     }
 
     /**
@@ -41,19 +41,19 @@ public class Name {
 
     @Override
     public String toString() {
-        return InsuranceName;
+        return insuranceName;
     }
 
     @Override
     public boolean equals(Object other) {
         return other == this // short circuit if same object
                 || (other instanceof seedu.address.model.person.Name // instanceof handles nulls
-                && this.InsuranceName.equals(((seedu.address.model.person.Name) other).fullName)); // state check
+                && this.insuranceName.equals(((seedu.address.model.person.Name) other).fullName)); // state check
     }
 
     @Override
     public int hashCode() {
-        return InsuranceName.hashCode();
+        return insuranceName.hashCode();
     }
 
 }
