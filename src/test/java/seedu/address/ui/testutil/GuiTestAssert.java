@@ -50,38 +50,38 @@ public class GuiTestAssert {
      * @see PersonCard#getTagColorStyleFor(String)
      */
 
-    private static String getTagColorStyleFor(String tagName){
+    private static String getTagColorStyleFor(String tagName) {
         switch(tagName){
-            case "friends":
-            case "friend":
-                return "yellow";
+        case "friends":
+        case "friend":
+            return "yellow";
 
-            case "teacher":
-            case "classmates":
-                return "blue";
+        case "teacher":
+        case "classmates":
+            return "blue";
 
-            case "family":
-            case "husband":
-                return "green";
+        case "family":
+        case "husband":
+            return "green";
 
-            case "enemy":
-            case "owesMoney":
-                return "red";
+        case "enemy":
+        case "owesMoney":
+            return "red";
 
-            case "boyfriend":
-            case "girlfriend":
-                return "purple";
+        case "boyfriend":
+        case "girlfriend":
+            return "purple";
 
-            case "grandparent":
-            case "neighbours":
-                return "grey";
+        case "grandparent":
+        case "neighbours":
+            return "grey";
 
-            case "colleagues":
-                return "orange";
+        case "colleagues":
+            return "orange";
 
-            default:
+        default:
                 fail(tagName + " does not have a color assigned to it.");
-                return "";
+            return "";
         }
     }
 
