@@ -96,7 +96,7 @@ public class XmlAdaptedPerson {
             insurance = null;
         }
         else {
-            insurance = source.getInsurance().insurance;
+            insurance = source.getInsurance().insuranceName;
         }
     }
 

@@ -19,7 +19,7 @@ public class Insurance {
     public static final String INSURANCE_VALIDATION_REGEX = "[\\p{Alnum} ]*";
 
 
-    public final String insurance;
+    public final String insuranceName;
 
     /**
      * Constructs a {@code Name}.
@@ -28,7 +28,7 @@ public class Insurance {
      */
     public Insurance(String insurance) {
         checkArgument(isValidInsurance(insurance), MESSAGE_INSURANCE_CONSTRAINTS);
-        this.insurance = insurance;
+        this.insuranceName = insurance;
     }
 
     /**
@@ -44,19 +44,19 @@ public class Insurance {
 
     @Override
     public String toString() {
-        return insurance;
+        return insuranceName;
     }
 
     @Override
     public boolean equals(Object other) {
         return other == this // short circuit if same object
             || (other instanceof Insurance // instanceof handles nulls
-            && this.insurance.equals(((Insurance) other).insurance)); // state check
+            && this.insuranceName.equals(((Insurance) other).insuranceName)); // state check
     }
 
     @Override
     public int hashCode() {
-        return insurance.hashCode();
+        return insuranceName.hashCode();
     }
 
 }

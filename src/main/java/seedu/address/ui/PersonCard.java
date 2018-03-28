@@ -42,7 +42,10 @@ public class PersonCard extends UiPart<Region> {
     @FXML
     private Label appointment;
     @FXML
+    private Label insurance;
+    @FXML
     private FlowPane tags;
+
 
     public PersonCard(Person person, int displayedIndex) {
         super(FXML);
@@ -59,10 +62,18 @@ public class PersonCard extends UiPart<Region> {
         else {
             appointment.setText(person.getAppointment().value);
         }
+        if (person.getInsurance() == null) {
+            insurance.setText("Potential Client");
+        }
+        else {
+            insurance.setText(person.getInsurance().insuranceName);
+        }
         startTag(person);
+
+
     }
 
-    private String getTagColorStyleFor(String tag) {
+    private String getColorStyleFor(String tag) {
 
         if (tag.equals("Life")) {
             return TAG_COLOR_STYLES[0]; //yellow
@@ -120,7 +131,7 @@ public class PersonCard extends UiPart<Region> {
     private void startTag(Person person) {
         person.getTags().forEach(tag -> {
             Label tagLabel = new Label(tag.tagName);
-            tagLabel.getStyleClass().add(getTagColorStyleFor(tag.tagName));
+            tagLabel.getStyleClass().add(getColorStyleFor(tag.tagName));
             tags.getChildren().add(tagLabel);
         });
     }
