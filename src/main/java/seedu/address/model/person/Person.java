@@ -6,6 +6,7 @@ import java.util.Collections;
 import java.util.Objects;
 import java.util.Set;
 
+import seedu.address.model.Insurance.Insurance;
 import seedu.address.model.tag.Tag;
 import seedu.address.model.tag.UniqueTagList;
 
@@ -21,6 +22,7 @@ public class Person {
     private final Address address;
     private final Birthday birthday;
     private final Appointment appointment;
+    private final Insurance insurance;
 
     private final UniqueTagList tags;
 
@@ -28,7 +30,7 @@ public class Person {
      * Every field must be present and not null.
      */
     public Person(Name name, Phone phone, Email email, Address address, Set<Tag> tags, Birthday birthday,
-            Appointment appointment) {
+            Appointment appointment, Insurance insurance) {
         requireAllNonNull(name, phone, email, address, tags, birthday);
         this.name = name;
         this.phone = phone;
@@ -36,6 +38,7 @@ public class Person {
         this.address = address;
         this.birthday = birthday;
         this.appointment = appointment;
+        this.insurance = insurance;
         // protect internal tags from changes in the arg list
         this.tags = new UniqueTagList(tags);
     }
@@ -43,7 +46,7 @@ public class Person {
     /**
      * TODO: To be phased out
      */
-    public Person(Name name, Phone phone, Email email, Address address, Set<Tag> tags) {
+    public Person(Name name, Phone phone, Email email, Address address, Set<Tag> tags, Insurance insurance) {
         requireAllNonNull(name, phone, email, address, tags);
         this.name = name;
         this.phone = phone;
@@ -51,6 +54,7 @@ public class Person {
         this.address = address;
         this.birthday = new Birthday("00-00-0000");
         this.appointment = new Appointment("00-00-0000");
+        this.insurance = insurance;
         // protect internal tags from changes in the arg list
         this.tags = new UniqueTagList(tags);
     }
@@ -79,6 +83,10 @@ public class Person {
         return appointment;
     }
 
+    public Insurance getInsurance() {
+        return insurance;
+    }
+
     /**
      * Returns an immutable tag set, which throws {@code UnsupportedOperationException}
      * if modification is attempted.
@@ -102,13 +110,14 @@ public class Person {
                 && otherPerson.getPhone().equals(this.getPhone())
                 && otherPerson.getEmail().equals(this.getEmail())
                 && otherPerson.getAddress().equals(this.getAddress())
-                && otherPerson.getBirthday().equals(this.getBirthday());
+                && otherPerson.getBirthday().equals(this.getBirthday())
+                && otherPerson.getInsurance().equals(this.getInsurance());
     }
 
     @Override
     public int hashCode() {
         // use this method for custom fields hashing instead of implementing your own
-        return Objects.hash(name, phone, email, address, tags, birthday, appointment);
+        return Objects.hash(name, phone, email, address, tags, birthday, appointment, insurance);
     }
 
     @Override
